@@ -1,1 +1,0 @@
-{"at": "2026-10-01T17:11:48.042753+00:00", "event": "calibration_aborted_before_trials", "reason": "Avoid overlapping full F16 Metal allocation with quantization preparation; low available memory and stalled loading. Retry serially after preparation. No scored trial was written."}

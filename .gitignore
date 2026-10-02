@@ -30,3 +30,7 @@ studies/*/*.draft.*
 studies/*/raw/inspector-preview.log
 studies/*/publication/qa/downloaded-normalized.json
 studies/*/publication/site-integration/qa/inspector-normalized.json
+
+# Local compatibility references; canonical research lives in model-compression.
+/studies/qwen3-8b-base-20261001
+/scripts/publication
