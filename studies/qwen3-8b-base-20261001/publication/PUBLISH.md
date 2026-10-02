@@ -24,7 +24,7 @@ Expected production URL after deployment: `https://majorminor.xyz/research/plate
 The site integration bundle contains only new route/assets files, a three-file patch for the research index, sitemap and Plate 001 asset prebuild hook, and a source manifest. It omits unrelated pending site work. From a checkout of `major-minor-sites`:
 
 ```sh
-tar -xzf /Volumes/Research/tools/data-art/releases/plate-001-site-integration.tar.gz
+tar -xzf /Volumes/Research/tests/experiment-plates/releases/plate-001-site-integration.tar.gz
 git apply --check plate-001-existing-files.patch
 git apply plate-001-existing-files.patch
 npm run typecheck
@@ -35,35 +35,42 @@ Do not reapply the patch to the isolated checkout, where those additions are alr
 
 ## Publish the public study repository and two GitHub releases
 
-The selected public repository is `MAJORminorStudio/experiment-plates`. The initial publication script requires an empty destination so it cannot overwrite another project’s history. It is a one-time initial publishing command.
+The public repository is `MAJORminorStudio/experiment-plates`, and both tags/releases are already published. The existing Git history and remote now live at `/Volumes/Research/tests/experiment-plates`; there is no separate publishing checkout. This local path migration does not change the public repository, tags, assets or website.
 
-Initial repository creation (skip if already created):
-
-```sh
-export PLATE_REPO='MAJORminorStudio/experiment-plates'
-gh repo create "$PLATE_REPO" --public --description 'Experiment Plates visual 0.1 and Plate 001: 1,680 real Qwen3-8B Base trials'
-```
-
-Then, from data-art, publish the prepared snapshot and both releases:
+Verify the existing publication from the canonical checkout:
 
 ```sh
-cd /Volumes/Research/tools/data-art
-bash scripts/publication/publish-github.sh "$PLATE_REPO"
+cd /Volumes/Research/tests/experiment-plates
+git remote -v
+gh release view plate-v0.1.0 --repo MAJORminorStudio/experiment-plates
+gh release view plate-001-v1.0.0 --repo MAJORminorStudio/experiment-plates
 ```
 
-That command initializes only `releases/github-ready`, commits the allowlisted snapshot, pushes `main` and the tags `plate-v0.1.0` and `plate-001-v1.0.0`, and creates public GitHub releases with these exact notes/assets:
+If an existing tagged release needs to be created, the release helper uses the canonical Git checkout, verifies the published tag target and creates only a missing release. It skips existing releases and never initializes another repository or rewrites tags:
+
+```sh
+cd /Volumes/Research/tests/experiment-plates
+bash scripts/publication/publish-github.sh MAJORminorStudio/experiment-plates
+```
+
+The preserved original release notes/assets are:
 
 - `releases/PLATE-v0.1.0.md`, `releases/plate-v0.1.0.tar.gz` and its SHA256 file.
 - `releases/Plate-001-v1.0.0.md`, `releases/plate-001-v1.0.0.tar.gz` and its SHA256 file; the site-only bundle; final social PNG/SVG; completed MP4.
+
+These archives and their extracted copies are historical published snapshots. Do not regenerate or upload them for this local path migration. Their embedded command records and checksums deliberately retain original evidence bytes.
 
 No benchmark, Plate 002, site deployment or social posting occurs in the GitHub publishing script. Live verification and deployment records are retained separately from the pre-publication evidence audit.
 
 ## Local revalidation
 
 ```sh
-cd /Volumes/Research/tools/data-art
+cd /Volumes/Research/tests/experiment-plates
+npm ci
+npm test
+npm run example
 node studies/qwen3-8b-base-20261001/scripts/export.mjs --verify
 python3 scripts/publication/validate.py
 ```
 
-For production-build browser checks, serve mm-labs locally on port 4180 with `npm run start --workspace @major-minor/mm-labs -- --hostname 127.0.0.1 --port 4180`, then run `node scripts/publication/production-qa.mjs` from data-art. This checks production-relative article/images, launch metadata, all seven plate selections, inspector compare/download, gzip evidence hashes, 360/390/768 layouts, research-index and sitemap entries.
+For production-build browser checks, serve mm-labs locally on port 4180 with `npm run start --workspace @major-minor/mm-labs -- --hostname 127.0.0.1 --port 4180`, then run `node scripts/publication/production-qa.mjs` from the canonical repository root. This checks production-relative article/images, launch metadata, all seven plate selections, inspector compare/download, gzip evidence hashes, 360/390/768 layouts, research-index and sitemap entries.

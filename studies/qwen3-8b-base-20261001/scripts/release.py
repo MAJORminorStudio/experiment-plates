@@ -102,6 +102,7 @@ Use exported SVG/PNG and the real inspector. No fabricated animations or telemet
 From the repository root (requires the installed llama.cpp 0.4.1 binaries and ggml 0.24.0 recorded in `environment.json`):
 
 ```sh
+cd {ROOT.parents[1]}
 npm ci
 npm run build
 python3 -m venv studies/qwen3-8b-base-20261001/.venv

@@ -10,3 +10,23 @@ studies/*/.venv/
 # Python caches are not release evidence
 __pycache__/
 *.pyc
+
+# Local development fixtures and migration/publication records
+/examples/
+/outputs/
+/migration-audit/
+/releases/*.tar.gz
+/releases/*.tar.gz.sha256
+/releases/*.log
+/releases/plate-001-v1.0.0/
+/releases/plate-v0.1.0/
+/releases/*-validation.json
+/releases/*-live.json
+/releases/*-qa/
+/releases/live-qa/
+/releases/publication-ready.json
+/releases/verify-site-live.mjs
+studies/*/*.draft.*
+studies/*/raw/inspector-preview.log
+studies/*/publication/qa/downloaded-normalized.json
+studies/*/publication/site-integration/qa/inspector-normalized.json

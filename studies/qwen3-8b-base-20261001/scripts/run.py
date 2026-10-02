@@ -89,12 +89,12 @@ def run(calibrate=False):
  for condition in ['F16'] if calibrate else CONDITIONS:
   condition_done=[s for s in done if s[0]==condition]
   if len(condition_done)==240 and not calibrate:print(condition,'already has 240 trials',flush=True);continue
-  model=models['conditions'][condition];assert filehash(model['path'])==model['sha256'],'Model hash mismatch'
+  model=models['conditions'][condition];model_path=str(ROOT/'models'/pathlib.Path(model['path']).name);assert filehash(model_path)==model['sha256'],'Model hash mismatch'
   print(condition,'model hash verified',flush=True)
   before={'at':utcnow(),'thermal':command(['pmset','-g','therm']),'vm_stat':command(['vm_stat']),'memory_available':psutil.virtual_memory().available}
   if condition not in performance and not calibrate:
-   print(condition,'controlled llama-bench starting',flush=True);performance[condition]=bench(condition,model['path']);(ROOT/'performance.json').write_text(json.dumps(performance,indent=2)+'\n')
-  process,log,argv,load=start_server(condition,model['path'])
+   print(condition,'controlled llama-bench starting',flush=True);performance[condition]=bench(condition,model_path);(ROOT/'performance.json').write_text(json.dumps(performance,indent=2)+'\n')
+  process,log,argv,load=start_server(condition,model_path)
   print(condition,'server ready in',round(load,2),'seconds',flush=True)
   try:
    if calibrate:

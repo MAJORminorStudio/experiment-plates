@@ -17,8 +17,8 @@ def main():
  assert filehash(ROOT/'raw/trials.jsonl')==manifest['ledger_sha256']==v['ledger_sha256']
  checks={}
  for c in CONDITIONS:
-  info=models['conditions'][c];actual=filehash(info['path']);assert actual==info['sha256'],c
-  checks[c]={'sha256':actual,'bytes':pathlib.Path(info['path']).stat().st_size,'status':'passed'}
+  info=models['conditions'][c];model_path=ROOT/'models'/pathlib.Path(info['path']).name;actual=filehash(model_path);assert actual==info['sha256'],c
+  checks[c]={'sha256':actual,'bytes':model_path.stat().st_size,'status':'passed'}
   print(c,'final model hash passed',flush=True)
  for file,expected in read('../../releases/visual-0.1.freeze.json')['files'].items():assert filehash(ROOT/'../..'/file)==expected,('Freeze mismatch',file)
  pngs=[]

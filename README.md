@@ -30,9 +30,12 @@ Q2’s file was 79.97% smaller. Its observed decode throughput was 2.47× F16 **
 - [Three X posts](studies/qwen3-8b-base-20261001/publication/social-posts.md), [demo MP4](studies/qwen3-8b-base-20261001/publication/demo/plate-001-demo.mp4), [exact edit recipe](studies/qwen3-8b-base-20261001/publication/demo/edit-spec.md)
 - [GitHub-ready release notes](studies/qwen3-8b-base-20261001/publication/release-notes.md), [release validation](studies/qwen3-8b-base-20261001/publication/validation-report.json), [licenses](studies/qwen3-8b-base-20261001/LICENSES.md)
 
+The canonical local checkout is `/Volumes/Research/tests/experiment-plates`. It retains the published Git history and remote. Original trial/command records and tagged release archives retain their recorded historical paths; local runners resolve model files under the current study directory. `SHA256SUMS` describes the original published snapshot, before these local migration edits.
+
 Serve the repository to preview the article:
 
 ```sh
+cd /Volumes/Research/tests/experiment-plates
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
@@ -41,6 +44,7 @@ Open `http://127.0.0.1:4173/studies/qwen3-8b-base-20261001/publication/`. The in
 Verify existing results without running inference:
 
 ```sh
+cd /Volumes/Research/tests/experiment-plates
 npm ci
 npm run build
 python3 studies/qwen3-8b-base-20261001/scripts/test_suite.py

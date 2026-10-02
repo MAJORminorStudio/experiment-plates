@@ -3,6 +3,7 @@
 ## Verify existing data without inference
 
 ```sh
+cd /Volumes/Research/tests/experiment-plates
 npm ci
 npm run build
 python3 studies/qwen3-8b-base-20261001/scripts/test_suite.py
@@ -14,13 +15,14 @@ For the publication page builder: `npm ci --prefix scripts/publication`, then `p
 
 ## Independent inference replication
 
-The following commands run models. They were not run during release preparation. Back up the completed study and use a fresh ledger/workspace for an independent replication. The scripts preserve the historical paths; the original model and runtime files are excluded from the public archive.
+The following commands run models. They were not run during release preparation. Back up the completed study and use a fresh ledger/workspace for an independent replication. Historical manifests retain the recorded command paths. The runner and release validator resolve those model filenames under the current study directory’s `models/` folder; the original model and runtime files are excluded from the public archive.
 
 ## Reproduce on the same Mac
 
 From the repository root (requires the installed llama.cpp 0.4.1 binaries and ggml 0.24.0 recorded in `environment.json`):
 
 ```sh
+cd /Volumes/Research/tests/experiment-plates
 npm ci
 npm run build
 python3 -m venv studies/qwen3-8b-base-20261001/.venv

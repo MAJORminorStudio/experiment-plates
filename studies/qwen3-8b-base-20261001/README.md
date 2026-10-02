@@ -24,6 +24,7 @@ The first condition meeting the predeclared exploratory degradation rule was **Q
 From the repository root (requires the installed llama.cpp 0.4.1 binaries and ggml 0.24.0 recorded in `environment.json`):
 
 ```sh
+cd /Volumes/Research/tests/experiment-plates
 npm ci
 npm run build
 python3 -m venv studies/qwen3-8b-base-20261001/.venv
