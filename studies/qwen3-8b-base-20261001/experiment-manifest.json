@@ -1,0 +1,156 @@
+{
+  "format": "major-minor/real-study@1.0",
+  "id": "mm-qwen3-8b-base-20261001",
+  "status": "inference_complete",
+  "started_at": "2026-10-01T17:29:50.150698+00:00",
+  "synthetic": false,
+  "model": "Qwen/Qwen3-8B-Base",
+  "source_revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "llama_revision": "b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+  "visualVersion": "0.1",
+  "rendererVersion": "0.1.0",
+  "conditions": [
+    "F16",
+    "Q8_0",
+    "Q6_K",
+    "Q5_K_M",
+    "Q4_K_M",
+    "Q3_K_M",
+    "Q2_K"
+  ],
+  "tasks": 80,
+  "repeats": 3,
+  "target_trial_count": 1680,
+  "suite_sha256": "526220959781158e120ac8ee21484375c659663e6b4e168df3cbe3c447eb5619",
+  "scorer_sha256": "21364fad84e8afcee27ca6d283824849a418334fb92b04e321c762d807c1a9f0",
+  "system_prompt": "Solve the agent reasoning task using only the supplied facts. Return exactly one compact JSON object, with the requested keys and no commentary or markdown. Do not execute tools. Tool calls are proposals. Strings, booleans, numbers and lists must have their correct JSON types. Never invent missing evidence.",
+  "tool_definitions": {
+    "read_file": {
+      "path": "string"
+    },
+    "write_file": {
+      "path": "string",
+      "content": "string"
+    },
+    "list_dir": {
+      "path": "string"
+    },
+    "search_files": {
+      "root": "string",
+      "query": "string"
+    },
+    "run_tests": {
+      "target": "string"
+    },
+    "http_get": {
+      "url": "string"
+    },
+    "notify": {
+      "channel": "string",
+      "message": "string"
+    },
+    "copy_file": {
+      "source": "string",
+      "destination": "string"
+    }
+  },
+  "few_shot_examples": "### Example:\nTask: A counter starts at 3, increases by 2, then decreases by 1. Return {\"count\": integer}.\nAnswer: {\"count\":4}\n### Example:\nTask: Propose reading /tmp/a.txt. Return {\"tool\": string, \"arguments\": object}.\nAnswer: {\"tool\":\"read_file\",\"arguments\":{\"path\":\"/tmp/a.txt\"}}\n### Example:\nTask: Required outputs a.txt and b.txt. Only a.txt has a successful write receipt. Return {\"complete\": boolean, \"missing\": list of names}.\nAnswer: {\"complete\":false,\"missing\":[\"b.txt\"]}",
+  "inference": {
+    "n_predict": 96,
+    "temperature": 0.2,
+    "top_k": 40,
+    "top_p": 0.95,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "stop": [
+      "\n### Task:",
+      "\n### Example:"
+    ],
+    "cache_prompt": false,
+    "stream": false,
+    "samplers": [
+      "penalties",
+      "top_k",
+      "top_p",
+      "min_p",
+      "temperature"
+    ]
+  },
+  "server_args": [
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18173",
+    "-c",
+    "2048",
+    "-np",
+    "1",
+    "-ngl",
+    "99",
+    "-t",
+    "8",
+    "-tb",
+    "8",
+    "-b",
+    "512",
+    "-ub",
+    "512",
+    "-fa",
+    "on",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "--fit",
+    "off",
+    "--no-cache-prompt",
+    "--cache-ram",
+    "0",
+    "--no-cache-idle-slots",
+    "--no-webui",
+    "--metrics",
+    "--cors-origins",
+    "http://127.0.0.1:18173"
+  ],
+  "seed_rule": "100000 + task array index * 10 + run index (1..3); same per task/run in all conditions",
+  "context_size": 2048,
+  "request_timeout_seconds": 60,
+  "memory_method": {
+    "metric": "sampled llama-server process RSS",
+    "unit": "bytes",
+    "sample_interval_ms": 50,
+    "limitations": "RSS sampling is not a complete unified-memory/Metal physical-footprint account; short-lived peaks may be missed. Per-trial maximum includes the resident model and runtime."
+  },
+  "prompt_caching": false,
+  "grammar_constrained_output": false,
+  "llm_judge": null,
+  "trial_order": "Repeat blocks 1,2,3; deterministic task shuffle seed 20261001+run, reused in each condition",
+  "condition_order": [
+    "F16",
+    "Q8_0",
+    "Q6_K",
+    "Q5_K_M",
+    "Q4_K_M",
+    "Q3_K_M",
+    "Q2_K"
+  ],
+  "performance": "Separate llama-bench pp256 and tg64, 3 measurements, warmed; trial speed recorded separately",
+  "load_time_definition": "wall time from process spawn to health ready, including runtime/model load and warmup",
+  "environment_file": "environment.json",
+  "model_manifest_file": "model-manifest.json",
+  "renderer_freeze": "../../releases/visual-0.1.freeze.json",
+  "primary_degradation_rule": "At least 5 percentage-point paired drop vs F16 and positive lower bound of 95% task-cluster bootstrap interval (10000 resamples). Exploratory categories, no multiplicity-corrected claim.",
+  "limitations": [
+    "Agent-relevant microtasks with proposed tools, not an end-to-end agent execution benchmark",
+    "Base completion model; fixed few-shot instructions, no instruction-tuned model substituted",
+    "Long-context tasks target retention within 2048-token context, not 32768-token capability",
+    "Fixed sequential condition order can confound performance with thermal or background load drift",
+    "Three seeds per task; task cluster is the analysis unit for uncertainty"
+  ],
+  "finished_at": "2026-10-01T18:37:52.827362+00:00",
+  "trial_count": 1680,
+  "ledger_sha256": "2bbd80096640544a2ff3ece300f6afce4a1960e77c81812870dbf7c48fb9fcde",
+  "performance_sha256": "4ebfd728f8934ec94ed67c75778c94bc5302e59a7e0bc8b1f50bd84db2ba38a7"
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAJOR//MINOR canonical experiment v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "experiment",
+    "conditions",
+    "units",
+    "metrics",
+    "observations"
+  ],
+  "properties": {
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "model",
+        "repeats",
+        "synthetic",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "repeats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "metrics": {
+      "const": {
+        "success": {
+          "type": "boolean",
+          "unit": "boolean"
+        },
+        "latency_ms": {
+          "type": "number",
+          "unit": "ms"
+        },
+        "tokens_per_second": {
+          "type": "number",
+          "unit": "tokens/s"
+        },
+        "memory_gb": {
+          "type": "number",
+          "unit": "GB"
+        },
+        "error_category": {
+          "type": "category",
+          "unit": "category"
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "condition",
+          "unit",
+          "run",
+          "success",
+          "latency_ms",
+          "tokens_per_second",
+          "memory_gb",
+          "error_category"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "condition": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "unit": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "run": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "success": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "latency_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "tokens_per_second": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "memory_gb": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "error_category": {
+            "enum": [
+              null,
+              "instruction",
+              "schema",
+              "tool_selection",
+              "tool_arguments",
+              "planning",
+              "state_loss",
+              "reasoning",
+              "timeout",
+              "execution",
+              "other"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

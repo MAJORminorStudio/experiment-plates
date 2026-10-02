@@ -1,0 +1,27 @@
+{
+  "visualVersion": "0.1",
+  "rendererVersion": "0.1.0",
+  "policy": "No aesthetic or renderer changes without an evidenced real-data bug. Study export composes unchanged 20-task panels.",
+  "files": {
+    "assets/fonts/Anton-OFL.txt": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4",
+    "assets/fonts/Anton-Regular.ttf": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+    "assets/fonts/IBMPlexMono-OFL.txt": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+    "assets/fonts/IBMPlexMono-Regular.ttf": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+    "package-lock.json": "15ea505f913122c369f25f3d0264d4d1d0f731c841ce5f17c1b8029698214f82",
+    "package.json": "342aaae388fda1979dd91f59637cce7017ef90583b34a0f7ae0bd86a17ed6876",
+    "schemas/experiment.schema.json": "93c579c8ea679b6ee070a471ad4ba79ef0baef4ac1e47dcf7aa0fae01fb6b4b5",
+    "schemas/plate-spec.schema.json": "6ddad871c621ac5ccc83ea687fc53caee6d7f9e75b77c3de2e65d8e23f688ae6",
+    "src/cli.ts": "f2e93793e473acd4fceeb9c6b1d597ff6e50048ec2288af333861dba1ee95538",
+    "src/input.ts": "860bd35c8fb69f2fb7fb0fbc9503665825f3c443188b314f587175f3b7fbacc4",
+    "src/inspector.ts": "e97beb43d989ab904bcbc5a9f64afad3cd216be340d67ccc46fa2d2548673360",
+    "src/outputs.ts": "2ca2f9f1a862b28816df9b2642b1aa1a7312c964b114db3ab55449bc700aa6b7",
+    "src/preview.ts": "acc1d3090a6215476a161677a12ce37da1507b7897f98316e2044c9e42e8d779",
+    "src/scene.ts": "2489e9ec8e942c79753ed19be4a6de41c16bee811daa6d2830a6005c140fa85f",
+    "src/spec.ts": "798f952b50142cd0ed3b10ca9a328ad64108f301a0e2801a34dea6b11d725c1d",
+    "src/svg.ts": "ef07f221a04093d8aa8e06ce0aa4d149c595687c3e180d6aef1db85e9b9c4758",
+    "src/synthetic.ts": "f77b24e29b1ee28a81de15486cad3c4cd35516739a884a94265fe77f11c4a6d9",
+    "src/types.ts": "af8157f6eaae9e9a9705204130ddbfa12e87afc06214b78ff2f6e981d6f0f236",
+    "src/util.ts": "1396b97c2b3512d307e308136a0815c93ef1f841e1b759d423d52456621d7c16",
+    "tsconfig.json": "3e47197a69fdbde4cb9dac38ead3be04f2d0cb4413cf51dc1331bb50b336b5f8"
+  }
+}

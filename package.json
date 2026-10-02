@@ -1,0 +1,30 @@
+{
+  "name": "major-minor-plates",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A fixed, evidence-linked stroke grammar for experiment plates.",
+  "type": "module",
+  "bin": {
+    "plate": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "plate": "node dist/src/cli.js",
+    "synthetic": "node dist/src/synthetic.js",
+    "example": "npm run build && npm run synthetic && node dist/src/cli.js init examples/qwen3-8b.synthetic.json --out examples/qwen3-8b.plate.json && node dist/src/cli.js series examples/qwen3-8b.plate.json --out outputs",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "preview": "node dist/src/preview.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "csv-parse": "^7.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "typescript": "^5.9.3"
+  }
+}

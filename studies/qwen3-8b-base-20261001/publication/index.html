@@ -1,0 +1,336 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>We Quantized an 8B Agent From F16 to Q2 | MAJOR//MINOR</title><meta name="description" content="1,680 real Qwen3-8B Base trials: strict success held near F16 at Q8/Q6, then collapsed at Q2. Raw data, fixed Experiment Plates, and an evidence inspector."><meta name="theme-color" content="#E7DFCC"><meta property="og:title" content="We Quantized an 8B Agent From F16 to Q2. It Didn’t Break Gradually."><meta property="og:description" content="Plate 001. 1,680 real trials. Every mark is a measurement."><meta property="og:type" content="article"><meta property="og:image" content="social/plate-001-launch-1600.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="1600"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="social/plate-001-launch-1600.png"><link rel="stylesheet" href="style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A08'/%3E%3Cpath d='M16 48L29 16M35 48L48 16' stroke='%233DA887' stroke-width='8'/%3E%3C/svg%3E"></head><body><a class="skip" href="#article">Skip to article</a><header class="mast"><a href="#article" class="brand">MAJOR<span>//</span>MINOR</a><div>EXPERIMENT PLATES<br>MEASURED / 001</div></header><main><article id="article"><h1>We Quantized an 8B Agent From F16 to Q2. It Didn’t Break Gradually.</h1>
+<div class="deck">1,680 real trials. Seven precision levels. A clear Q2 cliff—and a few awkward reversals on the way down.</div>
+
+<div class="article-meta">PLATE 001 · QWEN3-8B BASE · OCTOBER 1, 2026 · VISUAL 0.1</div>
+
+<figure><a href="../artifacts/hero.png" aria-label="Open full resolution: Existing Plate 001 hero, comparing measured Qwen3-8B Base conditions"><img src="../artifacts/hero.png" alt="Existing Plate 001 hero, comparing measured Qwen3-8B Base conditions" loading="lazy"></a><figcaption>The original study hero. All traces come from the completed ledger; the plate grammar remains visual 0.1.</figcaption></figure>
+
+
+<h2>The result</h2>
+<p>Qwen3-8B Base completed <strong>174/240 trials at F16 (72.50%)</strong> and <strong>3/240 at Q2_K (1.25%)</strong> under a strict whole-output contract. Q8_0 and Q6_K stayed effectively in the same capability range as F16 in this scoped study. Q3_K_M had a lower point estimate, but its paired interval crossed zero. Earlier category-specific losses appeared at Q5_K_M, Q4_K_M and Q3_K_M; the clear overall collapse arrived at Q2_K. Here, “agent” means tasks involving proposed tools, plans, state and files. We measured microtask responses, not an autonomous agent executing tools.</p>
+<h2>Seven conditions, one set of addresses</h2>
+<figure><a href="../artifacts/contact-sheet.png" aria-label="Open full resolution: Contact sheet of seven measured plates in order from F16 through Q2_K"><img src="../artifacts/contact-sheet.png" alt="Contact sheet of seven measured plates in order from F16 through Q2_K" loading="lazy"></a><figcaption>Read left to right, then down: F16 → Q8_0 → Q6_K → Q5_K_M → Q4_K_M → Q3_K_M → Q2_K. Each condition contains all 80 tasks in four fixed panels. Open the image for full resolution.</figcaption></figure>
+
+
+<p>The contact sheet makes the cliff visible. To check a count, read the tables. To investigate a mark, open the inspector.</p>
+<div class="explorer" aria-label="Compare individual measured plates">
+<div class="condition-tabs" role="group" aria-label="Choose quantization condition"><button type="button" data-quant="F16" aria-pressed="true">F16</button><button type="button" data-quant="Q8_0" aria-pressed="false">Q8_0</button><button type="button" data-quant="Q6_K" aria-pressed="false">Q6_K</button><button type="button" data-quant="Q5_K_M" aria-pressed="false">Q5_K_M</button><button type="button" data-quant="Q4_K_M" aria-pressed="false">Q4_K_M</button><button type="button" data-quant="Q3_K_M" aria-pressed="false">Q3_K_M</button><button type="button" data-quant="Q2_K" aria-pressed="false">Q2_K</button></div>
+<p id="plate-summary" aria-live="polite">F16 · 174 / 240 successes · 72.50%</p>
+<a id="plate-full" href="../artifacts/F16.png"><img id="plate-image" src="../artifacts/F16.png" alt="F16: four unchanged panels covering all 80 task addresses" loading="lazy"></a>
+<p class="small">Task addresses and scales stay fixed across conditions. <a href="../artifacts/inspector.html">Open the evidence inspector →</a></p>
+</div>
+
+<h2>What we tested</h2>
+<p><strong>80 tasks × 3 matched runs × 7 conditions = 1,680 scored trials.</strong> Ten task families each contain eight variants: structured JSON, tool selection, tool arguments, dependency plans, state tracking, context retention, recovery, constraints, completion judgment and code/file reasoning.</p>
+<p>We converted one pinned official <strong>Qwen3-8B Base</strong> source into a common F16 GGUF reference, then quantized that reference to Q8_0, Q6_K, Q5_K_M, Q4_K_M, Q3_K_M and Q2_K. No importance matrix was used. The source weights were BF16; F16 is the shared GGUF reference.</p>
+<p>All conditions used the same few-shot raw completion prompt, proposed tool definitions, task/run seeds and inference settings: 2,048-token context, 96 new tokens, temperature 0.2, top-k 40, top-p 0.95 and a repeat penalty of 1. No grammar constrained the output, and prompt caching was disabled. The run used one Mac Studio M1 Max with 32 GB of unified memory and a pinned llama.cpp Metal build. Ten calibration responses and seven condition warmups are excluded from the scored denominator.</p>
+<p>Deterministic scorers checked the entire output, including JSON syntax and types, expected values, tool arguments and valid plan dependencies. No LLM judged an answer, and no proposed tool was executed. Extra prose, another object or budget exhaustion could fail an otherwise correct opening answer. <a href="../methodology.md">Methodology</a>, <a href="../task-suite.json">task suite</a>, <a href="../scoring-definitions.json">scoring definitions</a> and <a href="../inference-settings.json">inference settings</a> preserve the details.</p>
+<h2>Overall results</h2>
+<figure><img src="success-rates.svg" alt="Zero-based bar plot of the seven success rates; exact counts follow"><figcaption>Observed strict success. The plot shows point estimates; uncertainty for paired differences appears in the table.</figcaption></figure>
+
+<div class="table-scroll" tabindex="0" role="region" aria-label="Data table; scroll horizontally on small screens"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Strict successes</th>
+<th>Success rate</th>
+<th>Drop vs F16 (pp)</th>
+<th>95% paired interval for drop (pp)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F16</td>
+<td>174/240</td>
+<td>72.50%</td>
+<td>0.00</td>
+<td>0.00 / 0.00</td>
+</tr>
+<tr>
+<td>Q8_0</td>
+<td>177/240</td>
+<td>73.75%</td>
+<td>-1.25</td>
+<td>-3.33 / 0.00</td>
+</tr>
+<tr>
+<td>Q6_K</td>
+<td>178/240</td>
+<td>74.17%</td>
+<td>-1.67</td>
+<td>-5.42 / 1.25</td>
+</tr>
+<tr>
+<td>Q5_K_M</td>
+<td>169/240</td>
+<td>70.42%</td>
+<td>2.08</td>
+<td>-0.83 / 5.83</td>
+</tr>
+<tr>
+<td>Q4_K_M</td>
+<td>170/240</td>
+<td>70.83%</td>
+<td>1.67</td>
+<td>-5.00 / 8.33</td>
+</tr>
+<tr>
+<td>Q3_K_M</td>
+<td>157/240</td>
+<td>65.42%</td>
+<td>7.08</td>
+<td>-1.25 / 15.42</td>
+</tr>
+<tr>
+<td>Q2_K</td>
+<td>3/240</td>
+<td>1.25%</td>
+<td>71.25</td>
+<td>61.67 / 80.42</td>
+</tr>
+</tbody></table></div>
+<p>Q6_K’s 178 successes versus F16’s 174 do <strong>not</strong> establish that Q6 beats F16. Q8/Q6 were effectively in the same capability range on this task set; this is not a formal equivalence test.</p>
+<p>Q3_K_M dropped <strong>7.08 percentage points</strong> in the point estimate. Its 95% paired interval for the drop was <strong>−1.25 to 15.42 points</strong>, which crosses zero. We do not present this as confirmed overall degradation.</p>
+<p>Q2_K dropped <strong>71.25 percentage points</strong>, with a paired interval of <strong>61.67 to 80.42 points</strong>. It was the first condition to meet the predeclared overall rule: a drop of at least five points and a positive lower bound of the 95% paired interval. Intervals use 10,000 seeded task-cluster bootstrap resamples, retaining each task’s three repeats together. They quantify uncertainty within this task set, not across every possible agent task.</p>
+<h2>Where losses appeared first</h2>
+<p>Tool arguments first met the exploratory category rule at <strong>Q5_K_M</strong>: <strong>5/24</strong>, versus <strong>12/24 at F16</strong>. Code/file reasoning first met it at <strong>Q4_K_M</strong>: <strong>18/24</strong>, versus <strong>22/24 at F16</strong>. Recovery first met it at <strong>Q3_K_M</strong>: <strong>0/24</strong>, versus <strong>12/24 at F16</strong>.</p>
+<p>These are category-specific signals from eight variants per family, without correction for multiple comparisons. “First” identifies the earliest qualifying condition in the tested order; it does not imply that every subsequent condition stayed worse. Tool arguments recovered to <strong>24/24 at Q4_K_M and Q3_K_M</strong>.</p>
+<details><summary>All category counts (24 trials per cell)</summary>
+
+<div class="table-scroll" tabindex="0" role="region" aria-label="Data table; scroll horizontally on small screens"><table>
+<thead>
+<tr>
+<th>Task family</th>
+<th>F16</th>
+<th>Q8_0</th>
+<th>Q6_K</th>
+<th>Q5_K_M</th>
+<th>Q4_K_M</th>
+<th>Q3_K_M</th>
+<th>Q2_K</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>structured output</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>2/24</td>
+</tr>
+<tr>
+<td>tool selection</td>
+<td>21/24</td>
+<td>21/24</td>
+<td>21/24</td>
+<td>21/24</td>
+<td>21/24</td>
+<td>21/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>tool arguments</td>
+<td>12/24</td>
+<td>12/24</td>
+<td>14/24</td>
+<td>5/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>planning</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>1/24</td>
+</tr>
+<tr>
+<td>state tracking</td>
+<td>7/24</td>
+<td>10/24</td>
+<td>7/24</td>
+<td>8/24</td>
+<td>0/24</td>
+<td>5/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>context retention</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>23/24</td>
+<td>24/24</td>
+<td>23/24</td>
+<td>24/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>recovery</td>
+<td>12/24</td>
+<td>12/24</td>
+<td>12/24</td>
+<td>12/24</td>
+<td>12/24</td>
+<td>0/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>constraints</td>
+<td>4/24</td>
+<td>4/24</td>
+<td>7/24</td>
+<td>5/24</td>
+<td>0/24</td>
+<td>0/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>completion</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>24/24</td>
+<td>0/24</td>
+</tr>
+<tr>
+<td>code file reasoning</td>
+<td>22/24</td>
+<td>22/24</td>
+<td>22/24</td>
+<td>22/24</td>
+<td>18/24</td>
+<td>11/24</td>
+<td>0/24</td>
+</tr>
+</tbody></table></div>
+</details>
+
+<p>State tracking (<strong>7/24</strong>) and constraint-following (<strong>4/24</strong>) were already weak at F16. Their reference floors make compression-induced loss difficult to interpret. Those weaknesses belong in the baseline story too.</p>
+<h2>The Q2 failure mode</h2>
+<div class="stat-band"><div><strong>3 / 240</strong><span>strict successes</span></div><div><strong>230 / 240</strong><span>generation budgets exhausted</span></div><div><strong>36</strong><span>correct opening objects, rejected outputs</span></div></div>
+
+<p>Q2_K exhausted the 96-token generation budget in <strong>230/240 trials</strong>. The scorer calls this flag <code>timeout_loop</code>; it means budget exhaustion, not a demonstrated tool loop or a transport timeout.</p>
+<p>A post hoc diagnostic found <strong>36 rejected Q2 responses that began with an oracle-correct JSON object</strong>, then continued beyond it. These remain failures under the original contract. Task 003 is a concrete example: the opening ticket answer is correct, but the response starts inventing further tasks and runs into the token limit.</p>
+<details open><summary>Actual response · Q2_K-task-003-r1 · 96 generated tokens · stop: limit</summary><pre class="raw-output">{&quot;ticket&quot;:412,&quot;owner&quot;:&quot;Jo&quot;,&quot;priority&quot;:3,&quot;attempts&quot;:4,&quot;labels&quot;:[&quot;ops&quot;,&quot;agent&quot;]}
+Task: Read /tmp/a.txt and /tmp/b.txt. Return exactly {&quot;success&quot;: list of booleans, &quot;files&quot;: list of strings}.
+Answer: {&quot;success&quot;:[True,True],&quot;files&quot;:[&quot;/tmp/a.txt&quot;,&quot;/tmp/b.txt&quot;]}
+Task: Read /tmp/a.txt and /tmp/b.txt. Return exactly {&quot;success&quot;: list of</pre></details>
+
+<p>This is evidence of output-discipline trouble. It does not establish that all Q2 failures hide correct reasoning, and extracting the first object would change the scoring rule. Strict stopping/output behavior may disproportionately affect Q2’s measured collapse. <strong>No task met the late-robustness criterion</strong> of at least two successes out of three at both F16 and Q2_K.</p>
+<div class="pair"><figure><a href="../artifacts/F16.png" aria-label="Open full resolution: F16 condition plate with 174 measured successes"><img src="../artifacts/F16.png" alt="F16 condition plate with 174 measured successes" loading="lazy"></a><figcaption>F16 · 174/240 strict successes.</figcaption></figure>
+<figure><a href="../artifacts/Q2_K.png" aria-label="Open full resolution: Q2_K condition plate with 3 measured successes"><img src="../artifacts/Q2_K.png" alt="Q2_K condition plate with 3 measured successes" loading="lazy"></a><figcaption>Q2_K · 3/240 strict successes. Every fracture corresponds to a scored failure.</figcaption></figure>
+</div>
+
+<p><a href="../artifacts/inspector.html">Inspect task 003 and its raw runs</a>, or read the complete <a href="../raw/trials.jsonl">JSONL ledger</a> and <a href="../raw/trials.csv">CSV ledger</a>.</p>
+<h2>Reversals stayed in the data</h2>
+<p><strong>14 tasks</strong> improved across at least one adjacent pair of conditions. Task 020, “Build arguments,” is one: it fell from three successes to zero at Q5_K_M, then returned to three at Q4_K_M.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Data table; scroll horizontally on small screens"><table>
+<thead>
+<tr>
+<th>task-020</th>
+<th>F16</th>
+<th>Q8_0</th>
+<th>Q6_K</th>
+<th>Q5_K_M</th>
+<th>Q4_K_M</th>
+<th>Q3_K_M</th>
+<th>Q2_K</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Successes / 3</td>
+<td>3/3</td>
+<td>3/3</td>
+<td>3/3</td>
+<td>0/3</td>
+<td>3/3</td>
+<td>3/3</td>
+<td>0/3</td>
+</tr>
+</tbody></table></div>
+<p>We retained the reversals in the ledger and plates. Three repeats do not establish a reproducible quantization advantage, but the observations do rule out telling a cleanly monotonic story about this run. The <a href="../results.json">results JSON</a> lists every reversal and the early/late task criteria.</p>
+<h2>Speed and size: a real tradeoff, with a system caveat</h2>
+<p>The Q2_K model file was <strong>79.97% smaller</strong> than F16: <strong>3.28 GB versus 16.39 GB</strong>. Separately recorded llama-bench decode throughput was <strong>41.36 versus 16.74 tokens/s</strong>, or <strong>2.47× F16</strong>.</p>
+<p><strong>That ratio is an observed system result. Desktop swapping affected the measurements, so it is not an isolated hardware or quantization speed claim.</strong> Fixed condition order and background desktop load also confound performance comparisons. The smaller file did not preserve strict-output success.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Data table; scroll horizontally on small screens"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Model file (GB, decimal)</th>
+<th>Observed decode (tok/s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F16</td>
+<td>16.39</td>
+<td>16.74</td>
+</tr>
+<tr>
+<td>Q8_0</td>
+<td>8.71</td>
+<td>33.60</td>
+</tr>
+<tr>
+<td>Q6_K</td>
+<td>6.73</td>
+<td>35.72</td>
+</tr>
+<tr>
+<td>Q5_K_M</td>
+<td>5.85</td>
+<td>29.95</td>
+</tr>
+<tr>
+<td>Q4_K_M</td>
+<td>5.03</td>
+<td>37.56</td>
+</tr>
+<tr>
+<td>Q3_K_M</td>
+<td>4.12</td>
+<td>36.06</td>
+</tr>
+<tr>
+<td>Q2_K</td>
+<td>3.28</td>
+<td>41.36</td>
+</tr>
+</tbody></table></div>
+<p>These are decimal file sizes and separate, warmed decode tests with three native samples per condition. Plate memory geometry uses sampled process RSS. RSS and native footprint counters do not account for all system or Metal allocations. The complete <a href="../performance.json">performance measurements</a> and <a href="../environment.json">environment metadata</a> are available for inspection.</p>
+<h2>Experiment Plates / PLATE 0.1</h2>
+<div class="quote">Every mark is a measurement.</div>
+
+<p>Experiment Plates give repeated tasks a fixed address. The same task sits in the same place at every quantization level, and the conditions share scales. Each run draws a trace: an intact stroke for success, an oxide fracture for a scored failure. Horizontal extent comes from latency, pulses from decode throughput, and the memory bracket/envelope from recorded process RSS. Small displacement records latency variation.</p>
+<p>The visual rules are fixed at <strong>version 0.1</strong>. This study composes four unchanged 20-task panels per condition to cover all 80 tasks. SVG artifacts embed provenance, source data, drawing rules and hashes. A deterministic renderer reproduces their geometry; the inspector traces a selected task or mark back to its observations and raw output.</p>
+<p>The plates help readers compare many task addresses and investigate individual runs. Conventional tables and plots still carry exact aggregate values and statistical uncertainty. PLATE is a companion to those tools and to experiment tracking. <a href="../../../docs/renderer-0.1.md">Frozen renderer details</a> and <a href="../artifacts/verification.json">artifact verification</a> describe the format.</p>
+<h2>Limitations</h2>
+<ul>
+<li><strong>Strict-output microtasks.</strong> Proposed tools and file operations were scored as responses; nothing was executed. This does not measure autonomous agent success, broad knowledge or maximum-context retention.</li>
+<li><strong>One model and one system.</strong> The findings apply to this Qwen3-8B Base setup on one M1 Max desktop. The instruction-tuned Qwen3 model was not tested.</li>
+<li><strong>Three repeats.</strong> Matched task/run seeds support paired comparisons, but few repeats limit conclusions about reversals.</li>
+<li><strong>Weak F16 categories.</strong> State tracking and constraints started below 50% success. A low reference floor obscures added compression loss.</li>
+<li><strong>Related task variants.</strong> Eight variants per category reuse ten templates. Task-cluster intervals do not account for dependence among variants within a template; category analyses are exploratory and not multiplicity-corrected.</li>
+<li><strong>Desktop swapping.</strong> Observed throughput and process-memory results are descriptive. They cannot isolate hardware or quantization effects.</li>
+<li><strong>Stopping and output discipline.</strong> Q2 may be disproportionately affected by the fixed stopping policy and strict whole-output contract. Correct prefixes remain failed trials.</li>
+</ul>
+<h2>Reproduction and evidence</h2>
+<p>Start with the <a href="../README.md">study README</a> and <a href="../reproduction.md">reproduction commands</a>. Replay scoring and verify the existing artifact manifests without starting an inference server:</p>
+<pre><code class="language-sh">npm ci
+npm run build
+python3 studies/qwen3-8b-base-20261001/scripts/test_suite.py
+node studies/qwen3-8b-base-20261001/scripts/export.mjs --verify
+python3 scripts/publication/validate.py
+</code></pre>
+<p>The release includes the raw ledger, normalized data, results, experiment manifest, scorer definitions, model/source hashes, inference settings, quantization commands, environment metadata, SVG/PNG plates, hero, contact sheet, inspector and demo. Large model weights are reproduced from the pinned source and are not bundled.</p>
+<div class="downloads"><a href="../raw/trials.jsonl" download>Raw ledger / JSONL</a><a href="../normalized.json" download>Normalized dataset</a><a href="../results.json" download>Results JSON</a><a href="../experiment-manifest.json" download>Experiment manifest</a><a href="../model-manifest.json" download>Model / source hashes</a><a href="../quantization-commands.json" download>Quantization commands</a><a href="../artifacts/inspector.html">Evidence inspector</a><a href="demo/plate-001-demo.mp4">30-second demo</a><a href="release-notes.md">Release notes</a><a href="../LICENSES.md">Licenses</a></div>
+
+<h2>Next: Plate 002</h2>
+<p>Compare <strong>F16 vs Q3_K_M vs Q2_K</strong> under a newly predeclared, broader stopping policy applied identically to all three conditions. Test whether Q2’s collapse is partly a failure of termination/output discipline rather than complete capability loss. Keep strict whole-output results and prefix-correctness diagnostics separate, and retain Plate 001 unchanged. <strong>Plate 002 has not been run.</strong></p>
+</article></main><footer><div class="brand">MAJOR<span>//</span>MINOR</div><p>PLATE 001 / VISUAL 0.1<br>Every mark is a measurement.</p><p>Prepared release · 80faa5d38aa6<br><a href="release-notes.md">Release notes</a> · <a href="../LICENSES.md">Licensing</a></p></footer><script src="article.js" defer></script></body></html>

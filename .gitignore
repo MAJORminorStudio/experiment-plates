@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+# Large locally reproducible study dependencies and weights
+studies/*/models/
+studies/*/weights/
+studies/*/runtime/
+studies/*/.venv/
+
+# Python caches are not release evidence
+__pycache__/
+*.pyc

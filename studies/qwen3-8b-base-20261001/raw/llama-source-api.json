@@ -1,0 +1,101 @@
+{
+  "sha": "b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+  "node_id": "C_kwDOJH_K4NoAKGIyOWM2MDZlMjhhMDFiMWJjOGMxMzUxMDI2YTBmYTZlNjE2YmY2YzQ",
+  "commit": {
+    "author": {
+      "name": "Georgi Gerganov",
+      "email": "ggerganov@gmail.com",
+      "date": "2026-09-14T14:01:05Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-09-14T14:01:05Z"
+    },
+    "message": "llama.cpp : bump version to 0.4.1 (#28900)",
+    "tree": {
+      "sha": "950999fe62b7fe55f44ab5b7394e3c8542f37f12",
+      "url": "https://api.github.com/repos/ggml-org/llama.cpp/git/trees/950999fe62b7fe55f44ab5b7394e3c8542f37f12"
+    },
+    "url": "https://api.github.com/repos/ggml-org/llama.cpp/git/commits/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqp/4hCRC1aQ7uu5UhlAAAf4gQAJmuN0QXhOc2jCiVA1S5jZwo\nIIk5+X/9f4944Shue3ZxcqqD5CU0zUATxgShN30Z33te2Dt6yXA54FtFQ35mT0Gp\nINlgj5qG8lL8geVDfZJP4AiQcBa7q4fmNCeJ3zI5VePxYWlCGFfGP3Y0iyeLZVeG\ncHjmaHsreJNJLvEwfxcf8OhdpD+i5vkgSIX/YpspyNDZpZH9qpfieLRiOfdPCWET\nWEBRgISeYuHWOiThBwZDqQ6qbNZXaE4mtD2YZXrRIAcRfZJHbqXSEd76luVpzf8l\nBSYFNfZfs1Wxl8Xv+id7lF+6cBaUcdk1nyYSqBFZSDcXFJzeqOSb1xK6jXyUUnyH\ne5MYVNULQOm1HGSbOjen/1tRw3dJK3/WRDPiNtcZ8tcPnYHelWQp4lzEt3zm9wTY\npp1N4fkNC7sCCE6ytIeOr1S6qMG0xp+D92s4ngqDw3Xiyff2+VGaU3k116aWqW3C\n+PzfDWYCu6wRfJdzKa9RQVHhKoZ5ZrIio/LE1E1Lit95ODLqHhRHfz1WziCEDpfe\niarb3psD4g1l6R/WD/6AKIlUA+qKkXcX2JVN5dEajXhuKpbbCb2Ms3l4lufSi7YR\nrTPdCRlA+lo3h6SoG+pw9gy01Ob4M1esZ8EE1c92tMFIV3NKTOcGi3RauCGlC/Gb\nk9lshnKrv9L4Kmxuw8i0\n=P0gt\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 950999fe62b7fe55f44ab5b7394e3c8542f37f12\nparent d9e03f1074dbd2979126d91dce1b5d304ec8394e\nauthor Georgi Gerganov <ggerganov@gmail.com> 1789394465 +0300\ncommitter GitHub <noreply@github.com> 1789394465 +0300\n\nllama.cpp : bump version to 0.4.1 (#28900)",
+      "verified_at": "2026-09-14T14:01:05Z"
+    }
+  },
+  "url": "https://api.github.com/repos/ggml-org/llama.cpp/commits/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+  "html_url": "https://github.com/ggml-org/llama.cpp/commit/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+  "comments_url": "https://api.github.com/repos/ggml-org/llama.cpp/commits/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4/comments",
+  "author": {
+    "login": "ggerganov",
+    "id": 1991296,
+    "node_id": "MDQ6VXNlcjE5OTEyOTY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1991296?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ggerganov",
+    "html_url": "https://github.com/ggerganov",
+    "followers_url": "https://api.github.com/users/ggerganov/followers",
+    "following_url": "https://api.github.com/users/ggerganov/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ggerganov/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ggerganov/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ggerganov/subscriptions",
+    "organizations_url": "https://api.github.com/users/ggerganov/orgs",
+    "repos_url": "https://api.github.com/users/ggerganov/repos",
+    "events_url": "https://api.github.com/users/ggerganov/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ggerganov/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "d9e03f1074dbd2979126d91dce1b5d304ec8394e",
+      "url": "https://api.github.com/repos/ggml-org/llama.cpp/commits/d9e03f1074dbd2979126d91dce1b5d304ec8394e",
+      "html_url": "https://github.com/ggml-org/llama.cpp/commit/d9e03f1074dbd2979126d91dce1b5d304ec8394e"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "4feaf083e04e6131febf25450da160ed9339928b",
+      "filename": "CMakeLists.txt",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/ggml-org/llama.cpp/blob/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4/CMakeLists.txt",
+      "raw_url": "https://github.com/ggml-org/llama.cpp/raw/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4/CMakeLists.txt",
+      "contents_url": "https://api.github.com/repos/ggml-org/llama.cpp/contents/CMakeLists.txt?ref=b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+      "patch": "@@ -5,7 +5,7 @@ include(CheckIncludeFileCXX)\n ### llama.cpp version\n set(LLAMA_VERSION_MAJOR 0)\n set(LLAMA_VERSION_MINOR 4)\n-set(LLAMA_VERSION_PATCH 0)\n+set(LLAMA_VERSION_PATCH 1)\n set(LLAMA_VERSION_BASE \"${LLAMA_VERSION_MAJOR}.${LLAMA_VERSION_MINOR}.${LLAMA_VERSION_PATCH}\")\n \n # whether this is a development/nightly build"
+    }
+  ]
+}

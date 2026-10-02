@@ -1,0 +1,122 @@
+{
+  "format": "major-minor/launch-graphic@1.0",
+  "dimensions": {
+    "width": 1600,
+    "height": 1600
+  },
+  "checks": {
+    "real_ledger_normalized_results_agree": true,
+    "all_1680_trials_rendered": true,
+    "no_missing_outcomes": true,
+    "all_80_tasks_same_order": true,
+    "three_repeats_each_task_condition": true,
+    "shared_geometry_projection": true,
+    "seven_exact_rates": true,
+    "minor_70_percent_major": true,
+    "fonts_outlined": true,
+    "frozen_files_unchanged": true,
+    "svg_xml_and_embedded_manifest_valid": true,
+    "optical_thickness_increased_20_percent": true,
+    "required_study_label_present": true,
+    "no_throughput_or_vram_summary_added": true
+  },
+  "aggregates": [
+    {
+      "condition": "F16",
+      "successes": 174,
+      "trials": 240,
+      "success_rate": 0.725,
+      "display_rate": "72.50%"
+    },
+    {
+      "condition": "Q8_0",
+      "successes": 177,
+      "trials": 240,
+      "success_rate": 0.7375,
+      "display_rate": "73.75%"
+    },
+    {
+      "condition": "Q6_K",
+      "successes": 178,
+      "trials": 240,
+      "success_rate": 0.7416666666666667,
+      "display_rate": "74.17%"
+    },
+    {
+      "condition": "Q5_K_M",
+      "successes": 169,
+      "trials": 240,
+      "success_rate": 0.7041666666666667,
+      "display_rate": "70.42%"
+    },
+    {
+      "condition": "Q4_K_M",
+      "successes": 170,
+      "trials": 240,
+      "success_rate": 0.7083333333333334,
+      "display_rate": "70.83%"
+    },
+    {
+      "condition": "Q3_K_M",
+      "successes": 157,
+      "trials": 240,
+      "success_rate": 0.6541666666666667,
+      "display_rate": "65.42%"
+    },
+    {
+      "condition": "Q2_K",
+      "successes": 3,
+      "trials": 240,
+      "success_rate": 0.0125,
+      "display_rate": "1.25%"
+    }
+  ],
+  "sources": [
+    {
+      "file": "normalized.json",
+      "sha256": "2c6668f9e0426ad3a58a6c24621025d88722102020e4efc0739a51423138f58e"
+    },
+    {
+      "file": "results.json",
+      "sha256": "80faa5d38aa60e094271ad40336143d7d70cfe6ee9a367f77153c52d8a8a09b7"
+    },
+    {
+      "file": "raw/trials.jsonl",
+      "sha256": "2bbd80096640544a2ff3ece300f6afce4a1960e77c81812870dbf7c48fb9fcde"
+    },
+    {
+      "file": "plate-spec.json",
+      "sha256": "c6bc9be36f2c6675328efd53bcb3905b850102a57c225ca8a5e39dc24ca0a32e"
+    }
+  ],
+  "trace_count": 1680,
+  "success_endpoint_count": 1028,
+  "outputs": [
+    {
+      "file": "plate-001-launch-1600.svg",
+      "sha256": "96552b69c488eb798c0fd3ae8321a9ffc0b7f8cde3135e5842b409c43d980223"
+    },
+    {
+      "file": "plate-001-launch-1600.png",
+      "sha256": "88645bc2e131dcb924f42db976c172f63a2fb338bb29c3137d7e3bd8d6f9b3d4"
+    },
+    {
+      "file": "plate-001-launch-1600.editable.svg",
+      "sha256": "04ef244a70db7bb4985add0fcbef0403df163159ba42b9973d1d11b5660a88cb"
+    }
+  ],
+  "visual_review": {
+    "status": "passed",
+    "scales": [
+      1600,
+      400,
+      360
+    ],
+    "findings": [
+      "Same composition and fixed task order; optical strokes/endpoints increased 20%.",
+      "Study label and all seven rates remain legible at phone feed size.",
+      "Oxide COLLAPSE label uses larger Anton lettering, improving the Q2 hierarchy.",
+      "No added throughput/VRAM summary; canonical visual 0.1 unchanged."
+    ]
+  }
+}

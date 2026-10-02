@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAJOR//MINOR plate spec v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "input",
+    "sourceHash",
+    "normalizedHash",
+    "rendererVersion",
+    "visualVersion",
+    "seed",
+    "dimensions",
+    "scales",
+    "mappings"
+  ],
+  "properties": {
+    "format": {
+      "const": "major-minor/plate-spec@0.1"
+    },
+    "input": {
+      "type": "string"
+    },
+    "sourceHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "normalizedHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "rendererVersion": {
+      "const": "0.1.0"
+    },
+    "visualVersion": {
+      "const": "0.1"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "dimensions": {
+      "const": {
+        "width": 960,
+        "height": 1260
+      }
+    },
+    "scales": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "latency_ms",
+        "tokens_per_second",
+        "memory_gb"
+      ],
+      "properties": {
+        "latency_ms": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "const": 0
+            },
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          ]
+        },
+        "tokens_per_second": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "const": 0
+            },
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          ]
+        },
+        "memory_gb": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "const": 0
+            },
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          ]
+        }
+      }
+    },
+    "mappings": {
+      "const": {
+        "position": "unit array order; row-major fixed 4-column grid",
+        "integrity": "one trace per run; intact=true, fractured=false, open diamond=null",
+        "latency": "linear path horizontal extent, 0..series maximum rounded up to 5000 ms",
+        "throughput": "floor(tokens_per_second / 10) pulses; pulses equally spaced on the trace",
+        "resource": "mean observed memory_gb sets five-run envelope; 24 + 48 * GB / shared maximum",
+        "variance": "run latency minus unit/condition median; displacement = 0.15 * lane spacing * difference / shared latency maximum",
+        "error": "declared category selects a fixed fracture mask; unclassified failures use other",
+        "color": "successful trace=ink, successful endpoint=verdigris, failed trace=oxide, missing=ink",
+        "missing": "open diamond for missing outcome; metric-specific open markers for missing numeric channels",
+        "summary": "observed-success ratio; medians exclude missing values; coverage reported explicitly"
+      }
+    }
+  }
+}

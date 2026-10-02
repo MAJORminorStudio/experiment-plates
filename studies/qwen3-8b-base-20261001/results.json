@@ -1,0 +1,2059 @@
+{
+  "format": "major-minor/results@1.0",
+  "experiment_id": "mm-qwen3-8b-base-20261001",
+  "synthetic": false,
+  "trial_count": 1680,
+  "conditions": [
+    {
+      "condition": "F16",
+      "successes": 174,
+      "trials": 240,
+      "success_rate": 0.725,
+      "success_rate_task_cluster_ci95": [
+        0.625,
+        0.8166666666666667
+      ],
+      "paired_drop_vs_f16": 0.0,
+      "paired_drop_ci95": [
+        0.0,
+        0.0
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1853.560562536586,
+      "median_trial_generation_tokens_per_second": 19.070742468290966,
+      "model_bytes": 16388043520,
+      "model_sha256": "caea1a3f02cf4414fb1c7bca33cb28bb55969eed2b11ee1dda9f35822eb396c6",
+      "controlled_prompt_processing_tokens_per_second": 95.178824,
+      "controlled_generation_tokens_per_second": 16.739391,
+      "controlled_generation_gain_vs_f16": 1.0,
+      "bench_peak_memory_bytes": 9080553472,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.0,
+      "model_size_saving_vs_f16": 0.0,
+      "load_to_ready_seconds": 159.6329917089315,
+      "primary_error_counts": {
+        "constraint_violation": 20,
+        "failure_to_recover": 12,
+        "wrong_arguments": 15,
+        "state_loss": 17,
+        "reasoning": 1,
+        "malformed_structured_output": 1
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 1,
+        "wrong_tool": 12,
+        "wrong_arguments": 27,
+        "incomplete_plan": 0,
+        "state_loss": 17,
+        "failure_to_recover": 12,
+        "premature_completion": 0,
+        "constraint_violation": 20,
+        "reasoning": 1,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 140292264
+    },
+    {
+      "condition": "Q8_0",
+      "successes": 177,
+      "trials": 240,
+      "success_rate": 0.7375,
+      "success_rate_task_cluster_ci95": [
+        0.6416666666666667,
+        0.8291666666666666
+      ],
+      "paired_drop_vs_f16": -0.012499999999999999,
+      "paired_drop_ci95": [
+        -0.03333333333333333,
+        0.0
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1449.7307080309838,
+      "median_trial_generation_tokens_per_second": 32.94404268729292,
+      "model_bytes": 8709518080,
+      "model_sha256": "5ac0b174ad89a722fd31820174743043b97d51b1b5ce38ada3c17684feb69928",
+      "controlled_prompt_processing_tokens_per_second": 426.066268,
+      "controlled_generation_tokens_per_second": 33.596654,
+      "controlled_generation_gain_vs_f16": 2.0070415942850013,
+      "bench_peak_memory_bytes": 8890089472,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.020974932925322043,
+      "model_size_saving_vs_f16": 0.4685443647149895,
+      "load_to_ready_seconds": 1.285630541970022,
+      "primary_error_counts": {
+        "constraint_violation": 20,
+        "failure_to_recover": 12,
+        "wrong_arguments": 15,
+        "state_loss": 14,
+        "reasoning": 1,
+        "malformed_structured_output": 1
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 1,
+        "wrong_tool": 12,
+        "wrong_arguments": 27,
+        "incomplete_plan": 0,
+        "state_loss": 14,
+        "failure_to_recover": 12,
+        "premature_completion": 0,
+        "constraint_violation": 20,
+        "reasoning": 1,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 146840416
+    },
+    {
+      "condition": "Q6_K",
+      "successes": 178,
+      "trials": 240,
+      "success_rate": 0.7416666666666667,
+      "success_rate_task_cluster_ci95": [
+        0.6458333333333334,
+        0.8291666666666666
+      ],
+      "paired_drop_vs_f16": -0.016666666666666666,
+      "paired_drop_ci95": [
+        -0.05416666666666666,
+        0.0125
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1541.7650210438296,
+      "median_trial_generation_tokens_per_second": 34.49015509540047,
+      "model_bytes": 6725899008,
+      "model_sha256": "062ad652af217b17a3ebaaa3326bdeced56d6c0d24eedaea0878c0b3b9477147",
+      "controlled_prompt_processing_tokens_per_second": 369.104646,
+      "controlled_generation_tokens_per_second": 35.719782,
+      "controlled_generation_gain_vs_f16": 2.1338758381353298,
+      "bench_peak_memory_bytes": 6903136256,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.23978904179289218,
+      "model_size_saving_vs_f16": 0.5895849922663617,
+      "load_to_ready_seconds": 1.0463500830810517,
+      "primary_error_counts": {
+        "constraint_violation": 17,
+        "failure_to_recover": 12,
+        "wrong_arguments": 13,
+        "state_loss": 17,
+        "malformed_structured_output": 3
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 3,
+        "wrong_tool": 12,
+        "wrong_arguments": 25,
+        "incomplete_plan": 0,
+        "state_loss": 17,
+        "failure_to_recover": 12,
+        "premature_completion": 0,
+        "constraint_violation": 17,
+        "reasoning": 0,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 142382576
+    },
+    {
+      "condition": "Q5_K_M",
+      "successes": 169,
+      "trials": 240,
+      "success_rate": 0.7041666666666667,
+      "success_rate_task_cluster_ci95": [
+        0.6083333333333333,
+        0.7958333333333334
+      ],
+      "paired_drop_vs_f16": 0.020833333333333332,
+      "paired_drop_ci95": [
+        -0.008333333333333333,
+        0.05833333333333333
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1762.7456045011058,
+      "median_trial_generation_tokens_per_second": 29.425137911032365,
+      "model_bytes": 5851112192,
+      "model_sha256": "97f54cbb3f0832faaa9386804214fe2d84b0980c6939afc656f13ecab8dc06f3",
+      "controlled_prompt_processing_tokens_per_second": 335.047451,
+      "controlled_generation_tokens_per_second": 29.947414,
+      "controlled_generation_gain_vs_f16": 1.7890384423184809,
+      "bench_peak_memory_bytes": 6029066240,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.3360463920408926,
+      "model_size_saving_vs_f16": 0.6429645683537946,
+      "load_to_ready_seconds": 1.2974817079957575,
+      "primary_error_counts": {
+        "constraint_violation": 19,
+        "failure_to_recover": 12,
+        "wrong_arguments": 22,
+        "state_loss": 16,
+        "malformed_structured_output": 2
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 2,
+        "wrong_tool": 12,
+        "wrong_arguments": 34,
+        "incomplete_plan": 0,
+        "state_loss": 16,
+        "failure_to_recover": 12,
+        "premature_completion": 0,
+        "constraint_violation": 19,
+        "reasoning": 0,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 142578536
+    },
+    {
+      "condition": "Q4_K_M",
+      "successes": 170,
+      "trials": 240,
+      "success_rate": 0.7083333333333334,
+      "success_rate_task_cluster_ci95": [
+        0.6083333333333334,
+        0.8041666666666666
+      ],
+      "paired_drop_vs_f16": 0.016666666666666666,
+      "paired_drop_ci95": [
+        -0.05,
+        0.08333333333333333
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1521.9979584799148,
+      "median_trial_generation_tokens_per_second": 35.82695020391938,
+      "model_bytes": 5027783424,
+      "model_sha256": "2b6414d1fe0eba52693c8e2a1afa1633b3652f237645c13c5f3da5a8e51f05d1",
+      "controlled_prompt_processing_tokens_per_second": 373.625646,
+      "controlled_generation_tokens_per_second": 37.555888,
+      "controlled_generation_gain_vs_f16": 2.2435635800609472,
+      "bench_peak_memory_bytes": 5207162880,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.4265588660364864,
+      "model_size_saving_vs_f16": 0.6932041693772607,
+      "load_to_ready_seconds": 0.7726810409221798,
+      "primary_error_counts": {
+        "constraint_violation": 24,
+        "failure_to_recover": 12,
+        "malformed_structured_output": 7,
+        "state_loss": 24,
+        "wrong_arguments": 3
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 7,
+        "wrong_tool": 12,
+        "wrong_arguments": 15,
+        "incomplete_plan": 0,
+        "state_loss": 24,
+        "failure_to_recover": 12,
+        "premature_completion": 0,
+        "constraint_violation": 24,
+        "reasoning": 0,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 143610128
+    },
+    {
+      "condition": "Q3_K_M",
+      "successes": 157,
+      "trials": 240,
+      "success_rate": 0.6541666666666667,
+      "success_rate_task_cluster_ci95": [
+        0.5541666666666666,
+        0.75
+      ],
+      "paired_drop_vs_f16": 0.07083333333333333,
+      "paired_drop_ci95": [
+        -0.0125,
+        0.15416666666666665
+      ],
+      "meaningful_degradation": false,
+      "median_trial_latency_ms": 1656.4260625164025,
+      "median_trial_generation_tokens_per_second": 32.19814684909598,
+      "model_bytes": 4124160768,
+      "model_sha256": "d4f8eb44957472c4c4492343a3299f3aa0acca6e929563e64c9acbc8d4394815",
+      "controlled_prompt_processing_tokens_per_second": 361.612784,
+      "controlled_generation_tokens_per_second": 36.055794,
+      "controlled_generation_gain_vs_f16": 2.1539489698281136,
+      "bench_peak_memory_bytes": 4305518592,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.5258528452834819,
+      "model_size_saving_vs_f16": 0.7483433112093664,
+      "load_to_ready_seconds": 0.7737527920398861,
+      "primary_error_counts": {
+        "constraint_violation": 24,
+        "failure_to_recover": 24,
+        "state_loss": 19,
+        "reasoning": 13,
+        "wrong_arguments": 3
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 0,
+        "wrong_tool": 24,
+        "wrong_arguments": 27,
+        "incomplete_plan": 0,
+        "state_loss": 19,
+        "failure_to_recover": 24,
+        "premature_completion": 0,
+        "constraint_violation": 24,
+        "reasoning": 13,
+        "timeout_loop": 0,
+        "other": 0
+      },
+      "reported_process_footprint_bytes": 145018480
+    },
+    {
+      "condition": "Q2_K",
+      "successes": 3,
+      "trials": 240,
+      "success_rate": 0.0125,
+      "success_rate_task_cluster_ci95": [
+        0.0,
+        0.029166666666666664
+      ],
+      "paired_drop_vs_f16": 0.7125,
+      "paired_drop_ci95": [
+        0.6166666666666666,
+        0.8041666666666666
+      ],
+      "meaningful_degradation": true,
+      "median_trial_latency_ms": 3395.6498755142093,
+      "median_trial_generation_tokens_per_second": 38.572561618718396,
+      "model_bytes": 3281732352,
+      "model_sha256": "025e3e2cf8131c07668d2f97ab05948ba778f342e9ffef5a007cf016a1b16dd9",
+      "controlled_prompt_processing_tokens_per_second": 383.205462,
+      "controlled_generation_tokens_per_second": 41.361502,
+      "controlled_generation_gain_vs_f16": 2.470908409989348,
+      "bench_peak_memory_bytes": 3461382144,
+      "bench_memory_metric": "maximum RSS",
+      "bench_memory_saving_vs_f16": 0.6188137480085091,
+      "model_size_saving_vs_f16": 0.7997483746003623,
+      "load_to_ready_seconds": 0.7794215829344466,
+      "primary_error_counts": {
+        "timeout_loop": 230,
+        "malformed_structured_output": 4,
+        "incomplete_plan": 2,
+        "other": 1
+      },
+      "error_flag_counts": {
+        "malformed_structured_output": 234,
+        "wrong_tool": 0,
+        "wrong_arguments": 0,
+        "incomplete_plan": 2,
+        "state_loss": 0,
+        "failure_to_recover": 0,
+        "premature_completion": 0,
+        "constraint_violation": 0,
+        "reasoning": 0,
+        "timeout_loop": 230,
+        "other": 1
+      },
+      "reported_process_footprint_bytes": 142855168
+    }
+  ],
+  "capability_categories": {
+    "structured_output": [
+      {
+        "condition": "F16",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 2,
+        "trials": 24,
+        "success_rate": 0.08333333333333333,
+        "paired_drop_vs_f16": 0.9166666666666666,
+        "paired_drop_ci95": [
+          0.7916666666666666,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "tool_selection": [
+      {
+        "condition": "F16",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 21,
+        "trials": 24,
+        "success_rate": 0.875,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.875,
+        "paired_drop_ci95": [
+          0.625,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "tool_arguments": [
+      {
+        "condition": "F16",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 14,
+        "trials": 24,
+        "success_rate": 0.5833333333333334,
+        "paired_drop_vs_f16": -0.08333333333333333,
+        "paired_drop_ci95": [
+          -0.29166666666666663,
+          0.08333333333333333
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 5,
+        "trials": 24,
+        "success_rate": 0.20833333333333331,
+        "paired_drop_vs_f16": 0.29166666666666663,
+        "paired_drop_ci95": [
+          0.08333333333333333,
+          0.5416666666666666
+        ],
+        "exploratory_degradation": true
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": -0.5,
+        "paired_drop_ci95": [
+          -0.7916666666666666,
+          -0.16666666666666666
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": -0.5,
+        "paired_drop_ci95": [
+          -0.7916666666666666,
+          -0.20833333333333331
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.5,
+        "paired_drop_ci95": [
+          0.20833333333333331,
+          0.7916666666666666
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "planning": [
+      {
+        "condition": "F16",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 1,
+        "trials": 24,
+        "success_rate": 0.041666666666666664,
+        "paired_drop_vs_f16": 0.9583333333333334,
+        "paired_drop_ci95": [
+          0.875,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "state_tracking": [
+      {
+        "condition": "F16",
+        "successes": 7,
+        "trials": 24,
+        "success_rate": 0.2916666666666667,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 10,
+        "trials": 24,
+        "success_rate": 0.41666666666666663,
+        "paired_drop_vs_f16": -0.125,
+        "paired_drop_ci95": [
+          -0.29166666666666663,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 7,
+        "trials": 24,
+        "success_rate": 0.2916666666666667,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 8,
+        "trials": 24,
+        "success_rate": 0.3333333333333333,
+        "paired_drop_vs_f16": -0.041666666666666664,
+        "paired_drop_ci95": [
+          -0.125,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.2916666666666667,
+        "paired_drop_ci95": [
+          0.041666666666666664,
+          0.625
+        ],
+        "exploratory_degradation": true
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 5,
+        "trials": 24,
+        "success_rate": 0.20833333333333331,
+        "paired_drop_vs_f16": 0.08333333333333334,
+        "paired_drop_ci95": [
+          -0.16666666666666666,
+          0.375
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.2916666666666667,
+        "paired_drop_ci95": [
+          0.041666666666666664,
+          0.625
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "context_retention": [
+      {
+        "condition": "F16",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 23,
+        "trials": 24,
+        "success_rate": 0.9583333333333334,
+        "paired_drop_vs_f16": 0.041666666666666664,
+        "paired_drop_ci95": [
+          0.0,
+          0.125
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 23,
+        "trials": 24,
+        "success_rate": 0.9583333333333334,
+        "paired_drop_vs_f16": 0.041666666666666664,
+        "paired_drop_ci95": [
+          0.0,
+          0.125
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 1.0,
+        "paired_drop_ci95": [
+          1.0,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "recovery": [
+      {
+        "condition": "F16",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 12,
+        "trials": 24,
+        "success_rate": 0.5,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.5,
+        "paired_drop_ci95": [
+          0.125,
+          0.875
+        ],
+        "exploratory_degradation": true
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.5,
+        "paired_drop_ci95": [
+          0.125,
+          0.875
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "F16",
+        "successes": 4,
+        "trials": 24,
+        "success_rate": 0.16666666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 4,
+        "trials": 24,
+        "success_rate": 0.16666666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 7,
+        "trials": 24,
+        "success_rate": 0.2916666666666667,
+        "paired_drop_vs_f16": -0.125,
+        "paired_drop_ci95": [
+          -0.375,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 5,
+        "trials": 24,
+        "success_rate": 0.20833333333333331,
+        "paired_drop_vs_f16": -0.041666666666666664,
+        "paired_drop_ci95": [
+          -0.125,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.16666666666666666,
+        "paired_drop_ci95": [
+          0.0,
+          0.41666666666666663
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.16666666666666666,
+        "paired_drop_ci95": [
+          0.0,
+          0.4166666666666667
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.16666666666666666,
+        "paired_drop_ci95": [
+          0.0,
+          0.41666666666666663
+        ],
+        "exploratory_degradation": false
+      }
+    ],
+    "completion": [
+      {
+        "condition": "F16",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 24,
+        "trials": 24,
+        "success_rate": 1.0,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 1.0,
+        "paired_drop_ci95": [
+          1.0,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ],
+    "code_file_reasoning": [
+      {
+        "condition": "F16",
+        "successes": 22,
+        "trials": 24,
+        "success_rate": 0.9166666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q8_0",
+        "successes": 22,
+        "trials": 24,
+        "success_rate": 0.9166666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q6_K",
+        "successes": 22,
+        "trials": 24,
+        "success_rate": 0.9166666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q5_K_M",
+        "successes": 22,
+        "trials": 24,
+        "success_rate": 0.9166666666666666,
+        "paired_drop_vs_f16": 0.0,
+        "paired_drop_ci95": [
+          0.0,
+          0.0
+        ],
+        "exploratory_degradation": false
+      },
+      {
+        "condition": "Q4_K_M",
+        "successes": 18,
+        "trials": 24,
+        "success_rate": 0.75,
+        "paired_drop_vs_f16": 0.16666666666666666,
+        "paired_drop_ci95": [
+          0.041666666666666664,
+          0.29166666666666663
+        ],
+        "exploratory_degradation": true
+      },
+      {
+        "condition": "Q3_K_M",
+        "successes": 11,
+        "trials": 24,
+        "success_rate": 0.4583333333333333,
+        "paired_drop_vs_f16": 0.4583333333333333,
+        "paired_drop_ci95": [
+          0.29166666666666663,
+          0.625
+        ],
+        "exploratory_degradation": true
+      },
+      {
+        "condition": "Q2_K",
+        "successes": 0,
+        "trials": 24,
+        "success_rate": 0.0,
+        "paired_drop_vs_f16": 0.9166666666666666,
+        "paired_drop_ci95": [
+          0.7916666666666666,
+          1.0
+        ],
+        "exploratory_degradation": true
+      }
+    ]
+  },
+  "uncertainty_method": "Matched paired task-cluster bootstrap, 10000 seeded resamples; three repeats per task are kept together. Category results exploratory, no multiplicity correction.",
+  "meaningful_drop_rule": "At least 5 percentage-point paired drop vs F16 and positive lower bound of 95% task-cluster bootstrap interval (10000 resamples). Exploratory categories, no multiplicity-corrected claim.",
+  "first_meaningful_degradation": "Q2_K",
+  "unusually_early_failures": [
+    {
+      "task_id": "task-021",
+      "task_name": "021 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 2,
+        "Q8_0": 2,
+        "Q6_K": 1,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3
+    }
+  ],
+  "unusually_late_robust_tasks": [],
+  "non_monotonic_tasks": [
+    {
+      "task_id": "task-018",
+      "task_name": "018 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 3,
+        "Q8_0": 3,
+        "Q6_K": 3,
+        "Q5_K_M": 2,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 1
+        }
+      ]
+    },
+    {
+      "task_id": "task-019",
+      "task_name": "019 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 1,
+        "Q8_0": 1,
+        "Q6_K": 2,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q8_0",
+          "to": "Q6_K",
+          "increase_in_successes": 1
+        },
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-020",
+      "task_name": "020 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 3,
+        "Q8_0": 3,
+        "Q6_K": 3,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-021",
+      "task_name": "021 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 2,
+        "Q8_0": 2,
+        "Q6_K": 1,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-022",
+      "task_name": "022 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 2,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q8_0",
+          "to": "Q6_K",
+          "increase_in_successes": 2
+        },
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-023",
+      "task_name": "023 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 0,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-024",
+      "task_name": "024 Build arguments",
+      "category": "tool_arguments",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 0,
+        "Q5_K_M": 0,
+        "Q4_K_M": 3,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q5_K_M",
+          "to": "Q4_K_M",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-035",
+      "task_name": "035 Track state",
+      "category": "state_tracking",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 2,
+        "Q6_K": 0,
+        "Q5_K_M": 0,
+        "Q4_K_M": 0,
+        "Q3_K_M": 0,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "F16",
+          "to": "Q8_0",
+          "increase_in_successes": 2
+        }
+      ]
+    },
+    {
+      "task_id": "task-036",
+      "task_name": "036 Track state",
+      "category": "state_tracking",
+      "successes_by_condition": {
+        "F16": 3,
+        "Q8_0": 3,
+        "Q6_K": 3,
+        "Q5_K_M": 3,
+        "Q4_K_M": 0,
+        "Q3_K_M": 2,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q4_K_M",
+          "to": "Q3_K_M",
+          "increase_in_successes": 2
+        }
+      ]
+    },
+    {
+      "task_id": "task-038",
+      "task_name": "038 Track state",
+      "category": "state_tracking",
+      "successes_by_condition": {
+        "F16": 1,
+        "Q8_0": 2,
+        "Q6_K": 1,
+        "Q5_K_M": 2,
+        "Q4_K_M": 0,
+        "Q3_K_M": 2,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "F16",
+          "to": "Q8_0",
+          "increase_in_successes": 1
+        },
+        {
+          "from": "Q6_K",
+          "to": "Q5_K_M",
+          "increase_in_successes": 1
+        },
+        {
+          "from": "Q4_K_M",
+          "to": "Q3_K_M",
+          "increase_in_successes": 2
+        }
+      ]
+    },
+    {
+      "task_id": "task-040",
+      "task_name": "040 Track state",
+      "category": "state_tracking",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 0,
+        "Q5_K_M": 0,
+        "Q4_K_M": 0,
+        "Q3_K_M": 1,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q4_K_M",
+          "to": "Q3_K_M",
+          "increase_in_successes": 1
+        }
+      ]
+    },
+    {
+      "task_id": "task-046",
+      "task_name": "046 Retain context",
+      "category": "context_retention",
+      "successes_by_condition": {
+        "F16": 3,
+        "Q8_0": 3,
+        "Q6_K": 2,
+        "Q5_K_M": 3,
+        "Q4_K_M": 2,
+        "Q3_K_M": 3,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q6_K",
+          "to": "Q5_K_M",
+          "increase_in_successes": 1
+        },
+        {
+          "from": "Q4_K_M",
+          "to": "Q3_K_M",
+          "increase_in_successes": 1
+        }
+      ]
+    },
+    {
+      "task_id": "task-059",
+      "task_name": "059 Filter actions",
+      "category": "constraints",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 3,
+        "Q5_K_M": 0,
+        "Q4_K_M": 0,
+        "Q3_K_M": 0,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q8_0",
+          "to": "Q6_K",
+          "increase_in_successes": 3
+        }
+      ]
+    },
+    {
+      "task_id": "task-063",
+      "task_name": "063 Filter actions",
+      "category": "constraints",
+      "successes_by_condition": {
+        "F16": 0,
+        "Q8_0": 0,
+        "Q6_K": 0,
+        "Q5_K_M": 1,
+        "Q4_K_M": 0,
+        "Q3_K_M": 0,
+        "Q2_K": 0
+      },
+      "repeats": 3,
+      "reversals": [
+        {
+          "from": "Q6_K",
+          "to": "Q5_K_M",
+          "increase_in_successes": 1
+        }
+      ]
+    }
+  ],
+  "non_monotonic_task_count": 14,
+  "reference_floor_categories": [
+    "state_tracking",
+    "constraints"
+  ],
+  "reference_success_rate": 0.725,
+  "category_first_exploratory_degradation": [
+    {
+      "category": "structured_output",
+      "first_condition": "Q2_K",
+      "reference_floor": false
+    },
+    {
+      "category": "tool_selection",
+      "first_condition": "Q2_K",
+      "reference_floor": false
+    },
+    {
+      "category": "tool_arguments",
+      "first_condition": "Q5_K_M",
+      "reference_floor": false
+    },
+    {
+      "category": "planning",
+      "first_condition": "Q2_K",
+      "reference_floor": false
+    },
+    {
+      "category": "state_tracking",
+      "first_condition": "Q4_K_M",
+      "reference_floor": true
+    },
+    {
+      "category": "context_retention",
+      "first_condition": "Q2_K",
+      "reference_floor": false
+    },
+    {
+      "category": "recovery",
+      "first_condition": "Q3_K_M",
+      "reference_floor": false
+    },
+    {
+      "category": "constraints",
+      "first_condition": null,
+      "reference_floor": true
+    },
+    {
+      "category": "completion",
+      "first_condition": "Q2_K",
+      "reference_floor": false
+    },
+    {
+      "category": "code_file_reasoning",
+      "first_condition": "Q4_K_M",
+      "reference_floor": false
+    }
+  ],
+  "output_discipline_diagnostic": {
+    "status": "post hoc exploratory; does not change any strict score or primary inference rule",
+    "method": "Decode a JSON object only when it begins the response; rerun the frozen scorer on that exact prefix without a stop-budget flag. Do not search inside prose, repair JSON, or count these as official successes.",
+    "correct_initial_object_but_strict_failure_counts": {
+      "F16": 0,
+      "Q8_0": 0,
+      "Q6_K": 0,
+      "Q5_K_M": 0,
+      "Q4_K_M": 0,
+      "Q3_K_M": 0,
+      "Q2_K": 36
+    },
+    "examples": {
+      "F16": [],
+      "Q8_0": [],
+      "Q6_K": [],
+      "Q5_K_M": [],
+      "Q4_K_M": [],
+      "Q3_K_M": [],
+      "Q2_K": [
+        {
+          "id": "Q2_K-task-001-r2",
+          "task_id": "task-001",
+          "correct_initial_object": "{\"ticket\":410,\"owner\":\"Mina\",\"priority\":3,\"attempts\":2,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 235
+        },
+        {
+          "id": "Q2_K-task-001-r3",
+          "task_id": "task-001",
+          "correct_initial_object": "{\"ticket\":410,\"owner\":\"Mina\",\"priority\":3,\"attempts\":2,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 235
+        },
+        {
+          "id": "Q2_K-task-003-r1",
+          "task_id": "task-003",
+          "correct_initial_object": "{\"ticket\":412,\"owner\":\"Jo\",\"priority\":3,\"attempts\":4,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 251
+        },
+        {
+          "id": "Q2_K-task-003-r2",
+          "task_id": "task-003",
+          "correct_initial_object": "{\"ticket\":412,\"owner\":\"Jo\",\"priority\":3,\"attempts\":4,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 267
+        },
+        {
+          "id": "Q2_K-task-003-r3",
+          "task_id": "task-003",
+          "correct_initial_object": "{\"ticket\":412,\"owner\":\"Jo\",\"priority\":3,\"attempts\":4,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 265
+        },
+        {
+          "id": "Q2_K-task-005-r2",
+          "task_id": "task-005",
+          "correct_initial_object": "{\"ticket\":414,\"owner\":\"Luis\",\"priority\":2,\"attempts\":6,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 261
+        },
+        {
+          "id": "Q2_K-task-005-r3",
+          "task_id": "task-005",
+          "correct_initial_object": "{\"ticket\":414,\"owner\":\"Luis\",\"priority\":2,\"attempts\":6,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 258
+        },
+        {
+          "id": "Q2_K-task-006-r1",
+          "task_id": "task-006",
+          "correct_initial_object": "{\"ticket\":415,\"owner\":\"Nia\",\"priority\":3,\"attempts\":7,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 254
+        },
+        {
+          "id": "Q2_K-task-006-r2",
+          "task_id": "task-006",
+          "correct_initial_object": "{\"ticket\":415,\"owner\":\"Nia\",\"priority\":3,\"attempts\":7,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 246
+        },
+        {
+          "id": "Q2_K-task-006-r3",
+          "task_id": "task-006",
+          "correct_initial_object": "{\"ticket\":415,\"owner\":\"Nia\",\"priority\":3,\"attempts\":7,\"labels\":[\"ops\",\"agent\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 235
+        },
+        {
+          "id": "Q2_K-task-010-r1",
+          "task_id": "task-010",
+          "correct_initial_object": "{\"tool\":\"list_dir\",\"arguments\":{\"path\":\"/workspace/src\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 344
+        },
+        {
+          "id": "Q2_K-task-010-r2",
+          "task_id": "task-010",
+          "correct_initial_object": "{\"tool\":\"list_dir\",\"arguments\":{\"path\":\"/workspace/src\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 344
+        },
+        {
+          "id": "Q2_K-task-010-r3",
+          "task_id": "task-010",
+          "correct_initial_object": "{\"tool\":\"list_dir\",\"arguments\":{\"path\":\"/workspace/src\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 344
+        },
+        {
+          "id": "Q2_K-task-011-r1",
+          "task_id": "task-011",
+          "correct_initial_object": "{\"tool\":\"search_files\",\"arguments\":{\"query\":\"ERROR\",\"root\":\"/workspace/logs\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 331
+        },
+        {
+          "id": "Q2_K-task-011-r2",
+          "task_id": "task-011",
+          "correct_initial_object": "{\"tool\":\"search_files\",\"arguments\":{\"query\":\"ERROR\",\"root\":\"/workspace/logs\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 331
+        },
+        {
+          "id": "Q2_K-task-011-r3",
+          "task_id": "task-011",
+          "correct_initial_object": "{\"tool\":\"search_files\",\"arguments\":{\"query\":\"ERROR\",\"root\":\"/workspace/logs\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 296
+        },
+        {
+          "id": "Q2_K-task-014-r1",
+          "task_id": "task-014",
+          "correct_initial_object": "{\"tool\":\"http_get\",\"arguments\":{\"url\":\"https://example.test/status\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 278
+        },
+        {
+          "id": "Q2_K-task-014-r2",
+          "task_id": "task-014",
+          "correct_initial_object": "{\"tool\":\"http_get\",\"arguments\":{\"url\":\"https://example.test/status\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 362
+        },
+        {
+          "id": "Q2_K-task-014-r3",
+          "task_id": "task-014",
+          "correct_initial_object": "{\"tool\":\"http_get\",\"arguments\":{\"url\":\"https://example.test/status\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 362
+        },
+        {
+          "id": "Q2_K-task-015-r1",
+          "task_id": "task-015",
+          "correct_initial_object": "{\"tool\":\"notify\",\"arguments\":{\"channel\":\"ops\",\"message\":\"build passed\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 294
+        },
+        {
+          "id": "Q2_K-task-015-r2",
+          "task_id": "task-015",
+          "correct_initial_object": "{\"tool\":\"notify\",\"arguments\":{\"channel\":\"ops\",\"message\":\"build passed\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 298
+        },
+        {
+          "id": "Q2_K-task-015-r3",
+          "task_id": "task-015",
+          "correct_initial_object": "{\"tool\":\"notify\",\"arguments\":{\"channel\":\"ops\",\"message\":\"build passed\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 278
+        },
+        {
+          "id": "Q2_K-task-016-r1",
+          "task_id": "task-016",
+          "correct_initial_object": "{\"tool\":\"copy_file\",\"arguments\":{\"destination\":\"/workspace/b.txt\",\"source\":\"/workspace/a.txt\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 326
+        },
+        {
+          "id": "Q2_K-task-016-r2",
+          "task_id": "task-016",
+          "correct_initial_object": "{\"tool\":\"copy_file\",\"arguments\":{\"destination\":\"/workspace/b.txt\",\"source\":\"/workspace/a.txt\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 325
+        },
+        {
+          "id": "Q2_K-task-016-r3",
+          "task_id": "task-016",
+          "correct_initial_object": "{\"tool\":\"copy_file\",\"arguments\":{\"destination\":\"/workspace/b.txt\",\"source\":\"/workspace/a.txt\"}}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 340
+        },
+        {
+          "id": "Q2_K-task-025-r1",
+          "task_id": "task-025",
+          "correct_initial_object": "{\"steps\":[\"read_config\",\"validate_config\",\"write_change\",\"run_tests\",\"report_result\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 333
+        },
+        {
+          "id": "Q2_K-task-025-r2",
+          "task_id": "task-025",
+          "correct_initial_object": "{\"steps\":[\"read_config\",\"validate_config\",\"write_change\",\"run_tests\",\"report_result\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 290
+        },
+        {
+          "id": "Q2_K-task-025-r3",
+          "task_id": "task-025",
+          "correct_initial_object": "{\"steps\":[\"read_config\",\"validate_config\",\"write_change\",\"run_tests\",\"report_result\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 287
+        },
+        {
+          "id": "Q2_K-task-027-r2",
+          "task_id": "task-027",
+          "correct_initial_object": "{\"steps\":[\"read_config\",\"validate_config\",\"write_change\",\"run_tests\",\"report_result\"]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 333
+        },
+        {
+          "id": "Q2_K-task-035-r3",
+          "task_id": "task-035",
+          "correct_initial_object": "{\"count\":13,\"location\":\"archive\",\"active\":false}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 297
+        },
+        {
+          "id": "Q2_K-task-048-r2",
+          "task_id": "task-048",
+          "correct_initial_object": "{\"endpoint\":\"https://alpha7.example.test/v2\",\"suffix\":\".agent7\"}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 290
+        },
+        {
+          "id": "Q2_K-task-048-r3",
+          "task_id": "task-048",
+          "correct_initial_object": "{\"endpoint\":\"https://alpha7.example.test/v2\",\"suffix\":\".agent7\"}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 294
+        },
+        {
+          "id": "Q2_K-task-065-r1",
+          "task_id": "task-065",
+          "correct_initial_object": "{\"complete\":true,\"missing\":[]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 369
+        },
+        {
+          "id": "Q2_K-task-068-r2",
+          "task_id": "task-068",
+          "correct_initial_object": "{\"complete\":true,\"missing\":[]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 369
+        },
+        {
+          "id": "Q2_K-task-068-r3",
+          "task_id": "task-068",
+          "correct_initial_object": "{\"complete\":true,\"missing\":[]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 369
+        },
+        {
+          "id": "Q2_K-task-071-r1",
+          "task_id": "task-071",
+          "correct_initial_object": "{\"complete\":true,\"missing\":[]}",
+          "strict_primary_error": "timeout_loop",
+          "stop_type": "limit",
+          "trailing_text_characters": 369
+        }
+      ]
+    }
+  },
+  "hero_task_id": "task-002",
+  "hero_conditions": [
+    "F16",
+    "Q4_K_M",
+    "Q2_K"
+  ],
+  "system_vm_activity": {
+    "F16": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 7422132,
+      "swapouts_pages": 7624249,
+      "pageins_pages": 3972013,
+      "pageouts_pages": 4350,
+      "compressions_pages": 74947025,
+      "decompressions_pages": 73188041,
+      "swapout_bytes": 124915695616,
+      "swapin_bytes": 121604210688
+    },
+    "Q8_0": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 29827,
+      "swapouts_pages": 0,
+      "pageins_pages": 119435,
+      "pageouts_pages": 2408,
+      "compressions_pages": 19641033,
+      "decompressions_pages": 18378233,
+      "swapout_bytes": 0,
+      "swapin_bytes": 488685568
+    },
+    "Q6_K": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 9598,
+      "swapouts_pages": 0,
+      "pageins_pages": 106088,
+      "pageouts_pages": 2421,
+      "compressions_pages": 8577529,
+      "decompressions_pages": 7946052,
+      "swapout_bytes": 0,
+      "swapin_bytes": 157253632
+    },
+    "Q5_K_M": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 13178,
+      "swapouts_pages": 9173,
+      "pageins_pages": 134393,
+      "pageouts_pages": 2210,
+      "compressions_pages": 3581626,
+      "decompressions_pages": 2972067,
+      "swapout_bytes": 150290432,
+      "swapin_bytes": 215908352
+    },
+    "Q4_K_M": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 1968,
+      "swapouts_pages": 0,
+      "pageins_pages": 124856,
+      "pageouts_pages": 1637,
+      "compressions_pages": 1294807,
+      "decompressions_pages": 1016996,
+      "swapout_bytes": 0,
+      "swapin_bytes": 32243712
+    },
+    "Q3_K_M": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 3463,
+      "swapouts_pages": 0,
+      "pageins_pages": 133704,
+      "pageouts_pages": 1776,
+      "compressions_pages": 299947,
+      "decompressions_pages": 269425,
+      "swapout_bytes": 0,
+      "swapin_bytes": 56737792
+    },
+    "Q2_K": {
+      "scope": "system-wide counters spanning benchmark, model startup and scored trials; cannot attribute all activity to study process",
+      "page_size_bytes": 16384,
+      "swapins_pages": 4835067,
+      "swapouts_pages": 5751824,
+      "pageins_pages": 4965910,
+      "pageouts_pages": 3859,
+      "compressions_pages": 14909799,
+      "decompressions_pages": 12840189,
+      "swapout_bytes": 94237884416,
+      "swapin_bytes": 79217737728
+    }
+  },
+  "anomalies": {
+    "non_monotonic_tasks": 14,
+    "reference_floor_categories": [
+      "state_tracking",
+      "constraints"
+    ],
+    "budget_exhaustion_by_condition": {
+      "F16": 0,
+      "Q8_0": 0,
+      "Q6_K": 0,
+      "Q5_K_M": 0,
+      "Q4_K_M": 0,
+      "Q3_K_M": 0,
+      "Q2_K": 230
+    },
+    "thermal_or_swap_warnings": [],
+    "memory_accounting": "F16 native peak process footprint was much smaller than RSS despite a 16.39 GB model. Both counters are preserved; infer that footprint does not capture total model occupancy. Comparison uses maximum RSS consistently. Neither counter measures complete system/Metal unified-memory use.",
+    "conditions_with_system_swapping": [
+      "F16",
+      "Q8_0",
+      "Q6_K",
+      "Q5_K_M",
+      "Q4_K_M",
+      "Q3_K_M",
+      "Q2_K"
+    ],
+    "performance_interpretation": "Observed serial measurements on a running desktop. System swapping and long F16 startup confound isolated quantization speed/memory claims; repeat performance tests in a quiet session before generalizing hardware throughput gains."
+  }
+}

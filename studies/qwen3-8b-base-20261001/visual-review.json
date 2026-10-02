@@ -1,0 +1,22 @@
+{
+  "reviewer": "Codex direct visual and browser inspection",
+  "reviewed_at": "2026-10-01T18:46:57.149610+00:00",
+  "hero": {
+    "status": "passed",
+    "file": "artifacts/hero.png",
+    "sha256": "cd6cfd946d87b4a911983a671b0ceb904187aacaeeb80161088eaf03f9b7b96f",
+    "notes": "Headline, outcomes, scope, RSS note and enlarged three-run callouts readable. No overlaps or clipping. Miniature full plates serve as overviews; detail panels preserve native-size task labels."
+  },
+  "contact_sheet": {
+    "status": "passed",
+    "file": "artifacts/contact-sheet.png",
+    "sha256": "827e10d9463e30a6da104fbdc04872803d9c1b04dda668dfa6482281b56eb3d5",
+    "notes": "Seven conditions in F16-to-Q2 order; all four panels per condition present. Title, condition headers, enlarged task key and provenance footer fit. Fine task labels require full-resolution viewing or native-size panel exports."
+  },
+  "inspector": {
+    "status": "passed",
+    "file": "artifacts/inspector.html",
+    "notes": "Browser verified initial four F16 panels, task pinning, Q2 switch, eight reference/current panels in compare mode, raw native outputs, token counts and detailed flags. DOM width 1280 equals scroll width. Final RSS clarification verified after reload. Canonical download payload preserved exactly by generated handler.",
+    "download_event": "The UI button was activated, but browser automation did not confirm a download event; canonical JSON files are also available directly in the release."
+  }
+}
