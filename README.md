@@ -15,8 +15,8 @@ Synthetic examples are development fixtures, explicitly marked as synthetic. The
 
 ## Qwen3-8B quantization example
 
-The [Qwen3-8B quantization/compression study](https://majorminor.xyz/research/plate-001) used Experiment Plates to render 1,680 strict-output agent microtask trials, F16 through Q2_K. Its research category is **Model Compression / Qwen3-8B / Quantization**. Plate 001 is its publication/artifact identifier.
+The [Qwen3-8B Quantization Study](https://majorminor.xyz/research/model-compression/qwen3-8b-quantization) used Experiment Plates to render 1,680 strict-output agent microtask trials, F16 through Q2_K. Its research category is **Model Compression / Qwen3-8B / Quantization**. Plate 001 is its publication/artifact identifier.
 
 The canonical local study lives at `/Volumes/Research/tests/model-compression/qwen3-8b-quantization`, including raw trials, scoring, configs, results, analysis, model/runtime metadata, reproduction and editorial tooling. This repository owns the renderer. [Frozen study references](studies/README.md) preserve public evidence and release links. The local legacy study and editorial-tooling paths are compatibility symlinks; they contain no duplicated canonical data.
 
-The [existing Plate 001 release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-001-v1.0.0) and all published history remain unchanged. They are historical snapshots; future research ownership belongs to model-compression. `SHA256SUMS` records the original release, rather than the current tool-only checkout.
+The [Qwen3-8B Quantization Study release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-001-v1.0.0) retains its original tag and frozen assets; its current description links the canonical study. Published Git history remains unchanged. Future research ownership belongs to model-compression. `SHA256SUMS` records the original release, rather than the current tool-only checkout.

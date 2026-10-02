@@ -1,4 +1,4 @@
-# Plate 001 — Qwen3-8B Base quantization study · 1.0.0
+# Qwen3-8B Quantization Study · 1.0.0
 
 A common-source F16-to-Q2 quantization series produced 1,680 real strict-output trials: 80 agent-relevant microtasks, three matched runs, seven conditions on one Mac Studio M1 Max / 32 GB.
 
@@ -20,6 +20,6 @@ Includes the article, three X posts, 30-second MP4 and exact edit recipe; raw JS
 
 Limits: strict-output microtasks, one Base model, one system, three repeats, related task templates, exploratory category comparisons, weak baseline categories, swapping, and potentially disproportionate Q2 stopping/output-contract effects. Plate 002 is described but has not run.
 
-Publication destinations: [MAJOR//MINOR article](https://majorminor.xyz/research/plate-001), [public repository](https://github.com/MAJORminorStudio/experiment-plates), [Plate 001 release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-001-v1.0.0), and [PLATE visual 0.1 release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-v0.1.0). The site integration is isolated on a clean origin/main checkout; publishing commands are in publication/PUBLISH.md. Model weights, runtime copies, synthetic examples and synthetic output artifacts are excluded from the public archive.
+Publication destinations: [Qwen3-8B Quantization Study](https://majorminor.xyz/research/model-compression/qwen3-8b-quantization), [Experiment Plates renderer repository](https://github.com/MAJORminorStudio/experiment-plates), [Qwen3-8B Quantization Study release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-001-v1.0.0), and [PLATE visual 0.1 release](https://github.com/MAJORminorStudio/experiment-plates/releases/tag/plate-v0.1.0). The site integration is isolated on a clean origin/main checkout; publishing commands are in publication/PUBLISH.md. Model weights, runtime copies, synthetic examples and synthetic output artifacts are excluded from the public archive.
 
-Final launch: 1600×1600 PNG/SVG with a 20% optical-weight increase, model/trial/hardware label and stronger oxide COLLAPSE treatment. Integrated into the existing mm-labs research index and sitemap at `/research/plate-001`. Production-relative links, images, inspector, gzip downloads and 360/390/768 layouts passed. No benchmark rerun or Plate 002 execution.
+Final launch: 1600×1600 PNG/SVG with a 20% optical-weight increase, model/trial/hardware label and stronger oxide COLLAPSE treatment. Integrated into the existing mm-labs research index and sitemap at `/research/model-compression/qwen3-8b-quantization`. Production-relative links, images, inspector, gzip downloads and 360/390/768 layouts passed. No benchmark rerun or Plate 002 execution.
